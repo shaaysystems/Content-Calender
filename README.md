@@ -1,8 +1,7 @@
-# Q-Mark Media — Content Calendar
+Content Calendar
 
 A premium, offline-first, Apple-inspired content calendar builder built for **Q-Mark Media**, a marketing and creative agency. It lets agency team members create professional, client-presentation-ready monthly content calendars, upload creatives, assign them to dates, track platforms/status, view auto-generated statistics, and export the final calendar as **PDF, PNG, or JPEG**.
 
-> "Make Your Brand Matter." — Q-Mark Media
 
 ---
 
