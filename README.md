@@ -1,7 +1,22 @@
-Content Calendar
+# Q-Mark Media — Content Calendar
 
 A premium, offline-first, Apple-inspired content calendar builder built for **Q-Mark Media**, a marketing and creative agency. It lets agency team members create professional, client-presentation-ready monthly content calendars, upload creatives, assign them to dates, track platforms/status, view auto-generated statistics, and export the final calendar as **PDF, PNG, or JPEG**.
 
+> "Make Your Brand Matter." — Q-Mark Media
+
+---
+
+## 🆕 Critical Responsive Design Fix — Mobile Calendar (latest)
+
+On phones (<768px) the 7-column calendar previously overflows the screen: Saturday/Sunday are cut off and the date rows 5,6 / 12,13 / 19,20 / 26,27 are unreachable.
+
+**Fix (mobile-only, `@media (max-width:767px)` at the END of `css/style.css`):**
+- `.calendar-wrap` becomes its own horizontally scrollable container — `overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch` — so swiping left/right reveals every weekday even on a 320px phone, while the **page itself never overflows horizontally** (the overflow is contained inside the calendar card).
+- `.cal-weekdays` and `.cal-grid` now share the **exact same column template** — `grid-template-columns:repeat(7, minmax(150px, 1fr)); min-width:1050px` — so the weekday header row and the date grid stay pixel-aligned and scroll together as one unit (swipe moves both).
+- `.cal-cell` min-height relaxed slightly (`170px`) so touch targets stay usable but more of the week fits per screen height.
+- Desktop (≥768px) is **100% unchanged** — the base rules (`repeat(7,1fr)`, `overflow:hidden`, `min-height:190px`) still apply untouched; the media block lives at the end of the file specifically so it wins the cascade only below 768px.
+- All calendar functionality (Add Content, edit, delete, drag & drop, day-detail modal) is untouched — it scrolls with the grid inside the container.
+- Service worker cache bumped to `v9` so every user picks up the fix immediately.
 
 ---
 

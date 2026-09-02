@@ -11,7 +11,7 @@
 
 // Bump this version on every deploy so old caches (which may hold outdated
 // or buggy files) are always purged on activate.
-const CACHE_VERSION = 'v8';
+const CACHE_VERSION = 'v9';
 const CACHE_NAME = 'qmark-calendar-' + CACHE_VERSION;
 
 const APP_SHELL = [

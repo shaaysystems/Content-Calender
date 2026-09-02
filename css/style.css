@@ -148,6 +148,7 @@ main.view{flex:1;padding:32px 40px 80px;max-width:1440px;margin:0 auto;width:100
   .stats-grid{grid-template-columns:1fr 1fr;}
 }
 
+
 .page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px;flex-wrap:wrap;}
 .page-head h1{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:0 0 4px;color:var(--text-1);}
 .page-head p{margin:0;color:var(--text-2);font-size:14.5px;}
@@ -775,3 +776,29 @@ main.view{flex:1;padding:32px 40px 80px;max-width:1440px;margin:0 auto;width:100
 .landing img{height:70px;margin-bottom:24px;}
 .landing h1{font-size:32px;font-weight:800;margin-bottom:8px;}
 .landing p{color:var(--text-2);margin-bottom:26px;max-width:420px;}
+
+/* ---------- Mobile-only: horizontally scrollable calendar (≤767px) ----------
+   IMPORTANT: this block sits at the END of the stylesheet, after every base
+   calendar rule, so it reliably wins the cascade (media queries get no
+   precedence on their own — equal-specificity rules later in the file win).
+   Desktop (≥768px) keeps the exact current 7-column layout untouched.
+
+   On phones the 7 weekday columns keep a usable per-column width and the
+   calendar scrolls horizontally inside its own scroll container — the
+   weekday header and date grid share the SAME column template, so they
+   always stay aligned and scroll together. The page itself never overflows
+   horizontally (the overflow is contained inside .calendar-wrap). */
+@media (max-width:767px){
+  .calendar-wrap{
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+  }
+  .cal-weekdays,
+  .cal-grid{
+    grid-template-columns:repeat(7, minmax(150px, 1fr));
+    min-width:1050px; /* 7 columns × 150px minimum — keeps every day usable */
+  }
+  .cal-cell{min-height:170px;}
+}
