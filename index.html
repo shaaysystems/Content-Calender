@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Q-Mark Media — Content Calendar</title>
+<meta name="description" content="Premium offline-first content calendar builder for Q-Mark Media agency." />
+<meta name="theme-color" content="#015EFE" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="images/qmark-logo.png" />
+<link rel="apple-touch-icon" href="images/qmark-logo.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+<!-- Export libraries -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+<link rel="stylesheet" href="css/style.css" />
+<style>body{font-family:'Inter',-apple-system,sans-serif;}</style>
+</head>
+<body>
+
+<div class="loading-screen" id="loading-screen">
+  <img src="images/qmark-logo.png" alt="Q-Mark Media" />
+</div>
+
+<div id="app">
+  <header class="app-header" id="app-header"></header>
+  <main class="view" id="view-root"></main>
+</div>
+
+<div id="toast-container"></div>
+
+<script src="js/db.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/wizard.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/content-modal.js"></script>
+<script src="js/library.js"></script>
+<script src="js/lightbox.js"></script>
+<script src="js/content-details.js"></script>
+<script src="js/preview.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
